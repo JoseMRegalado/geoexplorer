@@ -1,0 +1,8 @@
+<div class="movie-list">
+  <div class="movie-card" *ngFor="let movie of movies" (click)="onSelectMovie(movie)">
+    <img *ngIf="movie.poster" [src]="movie.poster" width="200" height="200" />
+    <h3><b>{{ movie.title }}</b></h3>
+    <p><b>Director:</b> {{ movie.directors?.join(', ') || 'Desconocido' }}</p>
+    <p><b>Actor:</b> {{ movie.actors?.join(', ') || 'Desconocido' }}</p>
+  </div>
+</div>

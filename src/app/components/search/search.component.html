@@ -1,0 +1,14 @@
+<div class="search-box">
+  <input type="text" [(ngModel)]="title" placeholder="Buscar película...">
+  <button (click)="buscarPeliculas()">Buscar</button>
+</div>
+
+<app-movie-list [movies]="results" (selectMovie)="mostrarGrafo($event)"></app-movie-list>
+
+<app-graph-view
+  *ngIf="selectedMovie"
+  [movie]="selectedMovie"
+  (directorClicked)="onDirectorClicked($event)">
+</app-graph-view>
+
+
