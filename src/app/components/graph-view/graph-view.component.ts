@@ -58,7 +58,8 @@ export class GraphViewComponent implements OnChanges {
       nodes: { font: { size: 16 } },
       edges: { font: { align: 'top' }, arrows: 'to' },
       physics: { stabilization: true },
-      interaction: { hover: true }
+      interaction: { hover: true, zoomView: false, // ← 🔥 desactiva zoom con scroll
+        dragView: true}
     };
 
     this.network = new Network(this.graphContainer.nativeElement, data, options);

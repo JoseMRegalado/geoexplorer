@@ -28,7 +28,7 @@ export class SparqlService {
         wdt:P57 ?director;
         wdt:P161 ?actor.
 
-  OPTIONAL { ?film wdt:P18 ?poster. }
+  OPTIONAL { ?film wdt:P154 ?poster. }
 
   # Pedir explícitamente las etiquetas para las variables necesarias
   SERVICE wikibase:label {

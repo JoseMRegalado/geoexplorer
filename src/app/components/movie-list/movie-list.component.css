@@ -1,16 +1,79 @@
 .movie-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1120px; /* 4 cards de 260px + 3 gaps de 20px */
+  margin: 0 auto;     /* centrar el contenedor */
 }
+
+
+/* Tarjeta individual con tamaño fijo */
 .movie-card {
+  width: 260px; /* 👈 Tamaño constante */
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 200px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen (opcional) */
 .movie-card img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: linear-gradient(to bottom, #e0e0e0, #fff);
+  padding: 10px;
+}
+
+
+.no-image {
+  height: 180px;
+  background: #f0f0f0;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Contenido de la tarjeta */
+.movie-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.movie-info h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #222;
+  text-align: center;
+}
+
+.movie-info p {
+  font-size: 14px;
+  color: #444;
+  max-height: 60px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.movie-info p::-webkit-scrollbar {
+  width: 4px;
+}
+
+.movie-info p::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
 }
